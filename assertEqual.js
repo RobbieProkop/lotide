@@ -8,10 +8,18 @@
 // console.assert(sum(1,20) === 3);
 
 const assertEqual = function (actual, expected) {
+  // regular format
+  // if (actual !== expected) {
+  //   console.log("⛔️⛔️⛔️Assertion Failed: " + actual + " !== " + expected);
+  // } else if (actual === expected) {
+  //   console.log("✅✅✅Assertion Passed: " + actual + " === " + expected);
+  // }
+
+  // template literal format
   if (actual !== expected) {
-    console.log("⛔️⛔️⛔️Assertion Failed: " + actual + " !== " + expected);
+    console.log(`⛔️⛔️⛔️Assertion Failed: ${actual} !==  ${expected}`);
   } else if (actual === expected) {
-    console.log("✅✅✅Assertion Passed: " + actual + " === " + expected);
+    console.log(`✅✅✅Assertion Passed: ${actual} ===  ${expected}`);
   }
 };
 
