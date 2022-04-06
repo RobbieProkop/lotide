@@ -18,7 +18,7 @@ const assertArraysEqual = function (actual, expected) {
 
 // need to take in an original array (actual), and itemsToRemove array (expected)
 
-const without = function (actual, expected) {
+const without = function (source, toRemove) {
   //  should retrun a new array
   let newArr = [];
 
@@ -27,10 +27,10 @@ const without = function (actual, expected) {
   // first we need to see if there are any matches between the two arrays
   // if the element does not match, push it to the new array
   // if it does match, do nothing
-  if (!eqArrays(actual, expected)) {
-    for (let i = 0; i < actual.length; i++) {
-      if (actual[i] !== expected[i]) {
-        newArr.push(actual[i]);
+  if (!eqArrays(source, toRemove)) {
+    for (let i = 0; i < source.length; i++) {
+      if (!toRemove.includes(source[i])) {
+        newArr.push(source[i]);
         // console.log(newArr);
       }
     }
@@ -46,6 +46,11 @@ assertArraysEqual(without(["1", "2", "3", "88"], [1, 2, "3", "4", 6, 4, 3]), [
   "2",
 ]);
 assertArraysEqual(without(["1", "2", "3"], [1, 2, "3", "4", 6, 4, 3]), [
+  "1",
+  "2",
+]);
+
+assertArraysEqual(without(["1", "2", "3"], ["3", 2, 1, "4", 6, 4, 3]), [
   "1",
   "2",
 ]);
