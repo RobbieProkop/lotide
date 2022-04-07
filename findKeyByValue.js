@@ -16,11 +16,11 @@ const assertEqual = function (actual, expected) {
 //  create function
 // create for in loop
 
-const findKeyByValue = function (obj, show) {
+const findKeyByValue = function (obj, item) {
   for (let prop in obj) {
     //loops through the keys of object
     // console.log(`${prop} = ${obj[prop]}`);
-    if (obj[prop] === show) {
+    if (obj[prop] === item) {
       //obj[prop] is the value of the current obj key. if it matches,
       return prop; //return the value
     }
