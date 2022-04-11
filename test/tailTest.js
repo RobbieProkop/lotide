@@ -1,9 +1,11 @@
-const assertEqual = require("../lib/assertEqual");
+const assert = require("chai").assert;
 const tail = require("../lib/tail");
 
-let result = tail(["head", "hello", "world", "I'm Robbie"]);
-// console.log(result);
-// assertEqual("hello", "hello"); // comparing strings
-// assertEqual(["hello", "1"].length, ["hello", "3"].length); // comparing the amount of elements
-assertEqual(result[2], "I'm Robbie"); // comparing the specific element to a string
-// assertEqual(result.length, 3);
+describe("tail  of an array", () => {
+  it("returns [2,3] for [1,2,3]", () => {
+    assert.deepEqual(tail([1, 2, 3]), [2, 3]);
+  });
+  it("returns [] for [5]", () => {
+    assert.deepEqual(tail(["5"]), []);
+  });
+});
