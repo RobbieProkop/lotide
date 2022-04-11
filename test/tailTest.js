@@ -1,5 +1,5 @@
-const assertEqual = require("../assertEqual");
-const tail = require("../tail");
+const assertEqual = require("../lib/assertEqual");
+const tail = require("../lib/tail");
 
 let result = tail(["head", "hello", "world", "I'm Robbie"]);
 // console.log(result);
