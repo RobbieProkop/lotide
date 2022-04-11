@@ -40,3 +40,20 @@ console.log(results1);
 
 assertArraysEqual(["Buddha", "Dhamma", "Sangha", "Anicca", "Panna"], results1); //should fail
 assertArraysEqual(["B", "D", "S", "A", "P"], results1); // should pass
+
+const testArray1 = ["bacon", "gravy", "soda"];
+const testArray2 = [1, 2, 3];
+const testArray3 = [3, 2, 1];
+
+assertArraysEqual(
+  map(testArray1, (word) => word[0]),
+  ["b", "g", "s"]
+); // should pass
+assertArraysEqual(
+  map(testArray2, (num) => num * 2),
+  [2, 4, 6]
+); // should pass
+assertArraysEqual(
+  map(testArray3, (num) => num > 2),
+  [true, false, false]
+); // should pass
